@@ -19,13 +19,13 @@ class FastAPIPYTestDB(FastAPIPYTestBase):
     DB_PASSWORD: str = os.environ.get("DB_PASSWORD")
 
     @property
-    def get_db_uri(self):
+    def get_db_uri(self) -> str:
         return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:" \
                f"{self.DB_PORT}/{self.DB_NAME}"
 
 
 class FastAPIPYTestSettings(FastAPIPYTestDB):
-    DEBUG: bool
+    DEBUG: bool = True
     postgres: FastAPIPYTestDB = FastAPIPYTestDB()
 
 
