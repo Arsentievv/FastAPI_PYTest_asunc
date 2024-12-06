@@ -16,12 +16,12 @@ class MaterialSchemaBase(BaseModel):
     photo: str | None = Field(
         default=None, description="Изображение"
     )
-    # created_at: datetime = Field(
-    #     description="Дата создания"
-    # )
-    # updated_at: datetime = Field(
-    #     description="Дата обновления"
-    # )
+    created_at: datetime = Field(
+        description="Дата создания"
+    )
+    updated_at: datetime = Field(
+        description="Дата обновления"
+    )
 
 
 class MaterialSchemaCreate(MaterialSchemaBase):

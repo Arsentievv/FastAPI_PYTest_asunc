@@ -1,7 +1,7 @@
 from data_base.session_manager import Base
-from sqlalchemy.orm import Mapped, mapped_column, MappedAsDataclass
+from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
-from pydantic import HttpUrl
+from utils.fields import created_at, updated_at
 
 
 class Material(Base):
@@ -13,9 +13,5 @@ class Material(Base):
     description: Mapped[str | None] = mapped_column(nullable=False)
     photo: Mapped[str | None] = mapped_column(nullable=True)
 
-    # created_at: Mapped[datetime] = mapped_column(
-    #     default=datetime.utcnow(), nullable=False
-    # )
-    # updated_at: Mapped[datetime] = mapped_column(
-    #     default_factory=datetime.utcnow, nullable=False
-    # )
+    created_at: Mapped[created_at]
+    updated_at: Mapped[updated_at]
