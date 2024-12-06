@@ -21,7 +21,10 @@ def init_app(init_db=True):
                 await session_manager.close()
 
         server = FastAPI(title="FastAPI PYTest async", lifespan=lifespan)
-        print(lifespan)
+
         # register routers here
 
         return server
+
+
+app = init_app()
