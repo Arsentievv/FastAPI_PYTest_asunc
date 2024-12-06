@@ -4,6 +4,7 @@ from fastapi import FastAPI
 
 from config import get_settings
 from data_base.db_connect import session_manager
+from materials.router import router as material_router
 
 settings = get_settings()
 
@@ -22,7 +23,7 @@ def init_app(init_db=True):
 
         server = FastAPI(title="FastAPI PYTest async", lifespan=lifespan)
 
-        # register routers here
+        server.include_router(material_router, tags=["materials"])
 
         return server
 
