@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field, HttpUrl
 from datetime import datetime
-from materials.enums import MaterialType
+from src.materials.enums import MaterialType
 
 
 class MaterialSchemaBase(BaseModel):

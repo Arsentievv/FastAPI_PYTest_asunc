@@ -1,9 +1,9 @@
 from fastapi.routing import APIRouter
-from materials import schemas
-from materials.crud import MaterialCRUD
+from src.materials import schemas
+from src.materials.crud import MaterialCRUD
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import Depends
-from data_base.db_connect import get_db
+from src.data_base.db_connect import get_db
 
 router = APIRouter(prefix="/materials", tags=["materials"])
 
@@ -22,7 +22,7 @@ async def create_material(
 
 
 @router.get(
-    "/",
+    "",
     response_model=list[schemas.MaterialSchemaGet],
     status_code=200,
     description="Получаем все материалы"

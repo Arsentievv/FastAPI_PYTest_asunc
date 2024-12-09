@@ -2,9 +2,9 @@ import contextlib
 
 from fastapi import FastAPI
 
-from config import get_settings
-from data_base.db_connect import session_manager
-from materials.router import router as material_router
+from src.config import get_settings
+from src.data_base.db_connect import session_manager
+from src.materials.router import router as material_router
 
 settings = get_settings()
 

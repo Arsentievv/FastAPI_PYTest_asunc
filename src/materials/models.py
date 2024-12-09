@@ -1,7 +1,6 @@
-from data_base.session_manager import Base
+from src.data_base.session_manager import Base
 from sqlalchemy.orm import Mapped, mapped_column
-from datetime import datetime
-from utils.fields import created_at, updated_at
+from src.utils.fields import created_at, updated_at
 
 
 class Material(Base):

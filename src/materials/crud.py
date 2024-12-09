@@ -1,6 +1,6 @@
-from materials.schemas import MaterialSchemaCreate
+from src.materials.schemas import MaterialSchemaCreate
 from sqlalchemy.ext.asyncio import AsyncSession
-from materials.models import Material
+from src.materials.models import Material
 from sqlalchemy import select
 
 
